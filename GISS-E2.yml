@@ -1,0 +1,13 @@
+description: "GISS-E2-1-G rad-irf data catalog"
+
+plugins:
+  source:
+    - module: intake_xarray
+
+sources:
+  p1f1:
+    description: GISS-E2-1-G  p1f1
+    args:
+      path: "{{CATALOG_DIR}}/GISS-E2-1-G-p1f1.yml"
+    driver: intake.catalog.local.YAMLFileCatalog
+    metadata: {}

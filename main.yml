@@ -1,0 +1,70 @@
+description: "RFMIP experiment rad-irf data catalog"
+
+plugins:
+  source:
+    - module: intake_xarray
+
+sources:
+  inputs:
+    description: Atmospheric conditions for rad-irf
+    driver: opendap
+    engine: netcdf4
+    args:
+      auth: null
+      chunks: {}
+      urlpath: https://aims3.llnl.gov/thredds/dodsC/user_pub_work/input4MIPs/CMIP6/RFMIP/UColorado/UColorado-RFMIP-1-2/atmos/fx/multiple/none/v20190401/multiple_input4MIPs_radiation_RFMIP_UColorado-RFMIP-1-2_none.nc
+      
+  benchmark:
+    description: benchmark rad-irf models
+    engine: netcdf4
+    args:
+      path: "{{CATALOG_DIR}}/benchmark.yml"
+    driver: intake.catalog.local.YAMLFileCatalog
+    metadata: {}
+
+  parameterized:
+    description: parameterized rad-irf models
+    engine: netcdf4
+    args:
+      path: "{{CATALOG_DIR}}/parameterized.yml"
+    driver: intake.catalog.local.YAMLFileCatalog
+    metadata: {}
+    
+  generic:
+    description: generic
+    driver: opendap
+    args:
+     urlpath: https://{{url_root}}/RFMIP/{{source}}/{{model}}/rad-irf/r1i1p{{phys_index}}f{{force_index}}/Efx/{{var}}/gn/{{version}}/{{var}}_Efx_{{model}}_rad-irf_r1i1p{{phys_index}}f{{force_index}}_gn.nc
+     auth: null
+     chunks: {}
+    parameters:
+      url_root:
+        description: ESGF OpenDAP access point
+        type: str
+        default: esgf3.dkrz.de/thredds/dodsC/cmip6
+      source:
+        description: CMIP6 source (institution short name)
+        default: AER         
+        type: str
+      model:
+        description: CMIP6 model name
+        default: LBLRTM-12-8
+        type: str
+      phys_index:
+        description: physics index
+        default: 1         
+        type: int
+        allowed: [1, 2, 3]
+      force_index:
+        description: forcing index
+        default: 1
+        type: int
+        allowed: [1, 2, 3]
+      version:
+        description: version
+        type: str
+      var:
+        description: variable
+        type: str
+        default: rlu
+        allowed: [rlu, rld, rsu, rsd]

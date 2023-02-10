@@ -1,0 +1,35 @@
+description: "MIROC6 (MIROC6) p1f1 rad-irf data catalog"
+
+plugins:
+  source:
+    - module: intake_xarray
+
+sources:
+  rsu:
+    driver: opendap
+    engine: netcdf4
+    args:
+      auth: null
+      chunks: {}
+      urlpath: https://esgf-data1.llnl.gov/thredds/dodsC/css03_data/CMIP6/RFMIP/MIROC/MIROC6/rad-irf/r1i1p1f1/Efx/rsu/gn/v20200430/rsu_Efx_MIROC6_rad-irf_r1i1p1f1_gn.nc
+  rsd:
+    driver: opendap
+    engine: netcdf4
+    args:
+      auth: null
+      chunks: {}
+      urlpath: https://esgf-data1.llnl.gov/thredds/dodsC/css03_data/CMIP6/RFMIP/MIROC/MIROC6/rad-irf/r1i1p1f1/Efx/rsd/gn/v20200430/rsd_Efx_MIROC6_rad-irf_r1i1p1f1_gn.nc
+  rlu:
+    driver: opendap
+    engine: netcdf4
+    args:
+      auth: null
+      chunks: {}
+      urlpath: https://esgf-data1.llnl.gov/thredds/dodsC/css03_data/CMIP6/RFMIP/MIROC/MIROC6/rad-irf/r1i1p1f1/Efx/rlu/gn/v20200430/rlu_Efx_MIROC6_rad-irf_r1i1p1f1_gn.nc
+  rld:
+    driver: opendap
+    engine: netcdf4
+    args:
+      auth: null
+      chunks: {}
+      urlpath: https://esgf-data1.llnl.gov/thredds/dodsC/css03_data/CMIP6/RFMIP/MIROC/MIROC6/rad-irf/r1i1p1f1/Efx/rld/gn/v20200430/rld_Efx_MIROC6_rad-irf_r1i1p1f1_gn.nc

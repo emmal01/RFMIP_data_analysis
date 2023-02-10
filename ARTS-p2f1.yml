@@ -1,0 +1,22 @@
+description: "ARTS (ARTS-2-3) p2f1 rad-irf data catalog"
+
+plugins:
+  source:
+    - module: intake_xarray
+
+sources:
+  rlu:
+    driver: opendap
+    engine: netcdf4
+    args:
+      auth: null
+      chunks: {}
+      urlpath: https://esgf3.dkrz.de/thredds/dodsC/cmip6/RFMIP/UHH/ARTS-2-3/rad-irf/r1i1p2f1/Efx/rlu/gn/v20190620/rlu_Efx_ARTS-2-3_rad-irf_r1i1p2f1_gn.nc
+
+  rld:
+    driver: opendap
+    engine: netcdf4
+    args:
+      auth: null
+      chunks: {}
+      urlpath: https://esgf3.dkrz.de/thredds/dodsC/cmip6/RFMIP/UHH/ARTS-2-3/rad-irf/r1i1p2f1/Efx/rld/gn/v20190620/rld_Efx_ARTS-2-3_rad-irf_r1i1p2f1_gn.nc

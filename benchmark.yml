@@ -1,0 +1,38 @@
+description: "benchmark rad-irf data catalog"
+
+plugins:
+  source:
+    - module: intake_xarray
+
+sources:
+  LBLRTM:
+    description: LBLRTM-12-8
+    engine: netcdf4
+    args:
+      path: "{{CATALOG_DIR}}/LBLRTM.yml"
+    driver: intake.catalog.local.YAMLFileCatalog
+    metadata: {}
+
+  _4AOP:
+    description: 4AOP-v1-5
+    engine: netcdf4
+    args:
+      path: "{{CATALOG_DIR}}/4AOP.yml"
+    driver: intake.catalog.local.YAMLFileCatalog
+    metadata: {}
+
+  ARTS:
+    description: ARTS-2-3
+    engine: netcdf4
+    args:
+      path: "{{CATALOG_DIR}}/ARTS.yml"
+    driver: intake.catalog.local.YAMLFileCatalog
+    metadata: {}
+
+  HadGEM3:
+    description: HadGEM3-GC31-LL
+    engine: netcdf4
+    args:
+      path: "{{CATALOG_DIR}}/HadGEM3-highres.yml"
+    driver: intake.catalog.local.YAMLFileCatalog
+    metadata: {}

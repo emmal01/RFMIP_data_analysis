@@ -1,0 +1,22 @@
+description: "4AOP (4AOP-v1-5) p1f3 rad-irf data catalog"
+
+plugins:
+  source:
+    - module: intake_xarray
+
+sources:
+  rlu:
+    driver: opendap
+    engine: netcdf4
+    args:
+      auth: null
+      chunks: {}
+      urlpath: https://vesg.ipsl.upmc.fr/thredds/dodsC/cmip6/RFMIP/IPSL/4AOP-v1-5/rad-irf/r1i1p1f3/Efx/rlu/gn/v20200611/rlu_Efx_4AOP-v1-5_rad-irf_r1i1p1f3_gn.nc
+
+  rld:
+    driver: opendap
+    engine: netcdf4
+    args:
+      auth: null
+      chunks: {}
+      urlpath: https://vesg.ipsl.upmc.fr/thredds/dodsC/cmip6/RFMIP/IPSL/4AOP-v1-5/rad-irf/r1i1p1f3/Efx/rld/gn/v20200611/rld_Efx_4AOP-v1-5_rad-irf_r1i1p1f3_gn.nc

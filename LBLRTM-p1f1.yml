@@ -1,0 +1,25 @@
+description: "LBLRTM (LBLRTM-12-8) p1f1 rad-irf data catalog"
+
+plugins:
+  source:
+    - module: intake_xarray
+
+sources:
+  rlu:
+    driver: netcdf
+    args:
+      urlpath: data/rlu_Efx_LBLRTM-12-8_rad-irf_r1i1p1f1_gn.nc
+  rld:
+    driver: netcdf
+    args:
+      urlpath: data/rld_Efx_LBLRTM-12-8_rad-irf_r1i1p1f1_gn.nc
+
+  rsu:
+    driver: netcdf
+    args:
+      urlpath: data/rsu_Efx_LBLRTM-12-8_rad-irf_r1i1p1f1_gn.nc
+
+  rsd:
+    driver: netcdf
+    args:
+      urlpath: data/rsd_Efx_LBLRTM-12-8_rad-irf_r1i1p1f1_gn.nc

@@ -1,0 +1,13 @@
+description: "RRTMG (RRTMG) rad-irf data catalog"
+
+plugins:
+  source:
+    - module: intake_xarray
+
+sources:
+  p1f1:
+    description: RRTMG-SW-4-02 p1f1, RRTMG-LW-4-91 p1f1
+    args:
+      path: "{{CATALOG_DIR}}/RRTMG-p1f1.yml"
+    driver: intake.catalog.local.YAMLFileCatalog
+    metadata: {}

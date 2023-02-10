@@ -1,0 +1,34 @@
+description: "ARTS (ARTS-2-3) rad-irf data catalog"
+
+plugins:
+  source:
+    - module: intake_xarray
+
+sources:
+  p1f1:
+    description: ARTS-2-3 p1f1
+    args:
+      path: "{{CATALOG_DIR}}/ARTS-2-3-p1f1.yml"
+    driver: intake.catalog.local.YAMLFileCatalog
+    metadata: {}
+
+  p1f2:
+    description: ARTS-2-3 p1f2
+    args:
+      path: "{{CATALOG_DIR}}/ARTS-2-3-p1f2.yml"
+    driver: intake.catalog.local.YAMLFileCatalog
+    metadata: {}
+
+  p1f3:
+    description: ARTS-2-3 p1f3
+    args:
+      path: "{{CATALOG_DIR}}/ARTS-2-3-p1f3.yml"
+    driver: intake.catalog.local.YAMLFileCatalog
+    metadata: {}
+  
+  p2f1:
+    description: ARTS-2-3 p2f1
+    args:
+      path: "{{CATALOG_DIR}}/ARTS-2-3-p2f1.yml"
+    driver: intake.catalog.local.YAMLFileCatalog
+    metadata: {}

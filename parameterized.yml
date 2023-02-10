@@ -1,0 +1,70 @@
+description: "parameterized rad-irf data catalog"
+
+plugins:
+  source:
+    - module: intake_xarray
+
+sources:
+  CanESM5:
+    description: CanESM5
+    engine: netcdf4
+    args:
+      path: "{{CATALOG_DIR}}/CanESM5.yml"
+    driver: intake.catalog.local.YAMLFileCatalog
+    metadata: {}
+    
+  GISS_E2:
+    description: GISS-E2-1-G
+    engine: netcdf4
+    args:
+      path: "{{CATALOG_DIR}}/GISS-E2.yml"
+    driver: intake.catalog.local.YAMLFileCatalog
+    metadata: {}
+
+  GISS_E3:
+    description: GISS-E3-G
+    engine: netcdf4
+    args:
+      path: "{{CATALOG_DIR}}/GISS-E3.yml"
+    driver: intake.catalog.local.YAMLFileCatalog
+    metadata: {}
+
+  HadGEM3:
+    description: HadGEM3-GCM
+    engine: netcdf4
+    args:
+      path: "{{CATALOG_DIR}}/HadGEM3.yml"
+    driver: intake.catalog.local.YAMLFileCatalog
+    metadata: {}
+    
+  MIROC6:
+    description: MIROC6
+    engine: netcdf4
+    args:
+      path: "{{CATALOG_DIR}}/MIROC6.yml"
+    driver: intake.catalog.local.YAMLFileCatalog
+    metadata: {}
+    
+  GFDL:
+    description: GFDL-CM4
+    engine: netcdf4
+    args:
+      path: "{{CATALOG_DIR}}/GFDL.yml"
+    driver: intake.catalog.local.YAMLFileCatalog
+    metadata: {}
+
+  RRTMG:
+    description: RRTMG
+    engine: netcdf4
+    args:
+      path: "{{CATALOG_DIR}}/RRTMG.yml"
+    driver: intake.catalog.local.YAMLFileCatalog
+    metadata: {}
+
+  RTE_RRTMGP:
+    description: RTE-RRTMGP-181204
+    engine: netcdf4
+    args:
+      path: "{{CATALOG_DIR}}/RTE_RRTMGP.yml"
+    driver: intake.catalog.local.YAMLFileCatalog
+    metadata: {}

@@ -1,0 +1,23 @@
+description: "CanESM5 (CanESM5) p2f2 rad-irf data catalog"
+
+plugins:
+  source:
+    - module: intake_xarray
+
+sources:
+  rlu:
+    driver: netcdf
+    args:
+      urlpath: data/rlu_Efx_CanESM5_rad-irf_r1i1p2f2_gn.nc
+  rld:
+    driver: netcdf
+    args:
+      urlpath: data/rld_Efx_CanESM5_rad-irf_r1i1p2f2_gn.nc
+  rsu:
+    driver: netcdf
+    args:
+      urlpath: data/rsu_Efx_CanESM5_rad-irf_r1i1p2f2_gn.nc
+  rsd:
+    driver: netcdf
+    args:
+      urlpath: data/rsd_Efx_CanESM5_rad-irf_r1i1p2f2_gn.nc

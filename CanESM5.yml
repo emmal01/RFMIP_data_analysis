@@ -1,0 +1,15 @@
+description: "CanESM5 (CanESM5) rad-irf data catalog"
+
+plugins:
+  source:
+    - module: intake_xarray
+
+sources:
+  p2f2:
+    description: CanESM5 p2f2
+    engine: netcdf4
+    args:
+      path: "{{CATALOG_DIR}}/CanESM5-p2f2.yml"
+    driver: intake.catalog.local.YAMLFileCatalog
+    metadata: {}
+

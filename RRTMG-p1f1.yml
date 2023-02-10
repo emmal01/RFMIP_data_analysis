@@ -1,0 +1,23 @@
+description: "RRTMG (RRTMG-SW-4-02, RRTMG-LW-4-91) p1f1 rad-irf data catalog"
+
+plugins:
+  source:
+    - module: intake_xarray
+
+sources:
+  rsu:
+    driver: netcdf
+    args:
+      urlpath: data/rsu_Efx_RRTMG-SW-4-02_rad-irf_r1i1p1f1_gn.nc
+  rsd:
+    driver: netcdf
+    args:
+      urlpath: data/rsd_Efx_RRTMG-SW-4-02_rad-irf_r1i1p1f1_gn.nc
+  rlu:
+    driver: netcdf
+    args:
+      urlpath: data/rlu_Efx_RRTMG-LW-4-91_rad-irf_r1i1p1f1_gn.nc
+  rld:
+    driver: netcdf
+    args:
+      urlpath: data/rld_Efx_RRTMG-LW-4-91_rad-irf_r1i1p1f1_gn.nc

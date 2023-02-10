@@ -1,0 +1,30 @@
+description: "4AOP (4AOP-v1-5) rad-irf data catalog"
+
+plugins:
+  source:
+    - module: intake_xarray
+
+sources:
+  p1f1:
+    description: 4AOP-v1-5 p1f1
+    engine: netcdf4
+    args:
+      path: "{{CATALOG_DIR}}/4AOP-v1-5-p1f1.yml"
+    driver: intake.catalog.local.YAMLFileCatalog
+    metadata: {}
+
+  p1f2:
+    description: 4AOP-v1-5 p1f2
+    engine: netcdf4
+    args:
+      path: "{{CATALOG_DIR}}/4AOP-v1-5-p1f2.yml"
+    driver: intake.catalog.local.YAMLFileCatalog
+    metadata: {}
+
+  p1f3:
+    description: 4AOP-v1-5 p1f3
+    engine: netcdf4
+    args:
+      path: "{{CATALOG_DIR}}/4AOP-v1-5-p1f3.yml"
+    driver: intake.catalog.local.YAMLFileCatalog
+    metadata: {}
